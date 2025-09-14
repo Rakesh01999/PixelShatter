@@ -172,7 +172,7 @@ void drawGameOver() {
 void drawCredits() {
     drawBackground();
     glColor3f(0.8f,0.9f,1.0f); drawText(-0.15f, 0.5f, "DEVELOPED BY", GLUT_BITMAP_TIMES_ROMAN_24);
-    drawText(-0.1f, 0.3f, "Rakesh Biswas"); drawText(-0.1f, 0.2f, "Nafis Ahamed");
+    drawText(-0.1f, 0.3f, "Rakesh Biswas    :200112"); drawText(-0.1f, 0.2f, "Nafis Ahamed    :200129");
     drawButton(0, -0.4f, 0.4f, 0.12f, "BACK: Press B");
 }
 
