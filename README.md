@@ -8,7 +8,10 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
 ---
 
 ## 📸 Screenshots (Optional)
-*(You can add images of the main menu, gameplay, and credits screen here)*
+
+<img width="1366" height="683" alt="Screenshot (533)" src="https://github.com/user-attachments/assets/e0e49725-d160-4094-bfee-2d19d833be16" />
+
+<img width="1366" height="696" alt="Screenshot (534)" src="https://github.com/user-attachments/assets/f059dc7d-45ce-46a2-87e6-1b98972ca191" />
 
 ---
 
