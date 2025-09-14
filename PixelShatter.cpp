@@ -21,6 +21,7 @@ const int ROWS = 6, COLS = 12;
 bool bricks[ROWS][COLS];
 float brickWidth = 0.14f, brickHeight = 0.06f;
 
+
 // Game vars
 int score = 0, lives = 3, level = 1, ballColor = 0, paddleColor = 2, brickColor = 1;
 float menuAnim = 0;
