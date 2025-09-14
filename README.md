@@ -47,12 +47,13 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
 3. Compile:
 
    ```bash
-   g++ -std=c++17 Breakoutv0.cpp -o PixelShatter.exe -lfreeglut -lopengl32 -lglu32 -lgdi32 -lwinmm
+   g++ -o PixelShatter PixelShatter.cpp -lfreeglut -lopengl32 -lglu32
+
    ```
 4. Run:
 
    ```bash
-   ./PixelShatter.exe
+   ./PixelShatter
    ```
 
    ⚠️ If `freeglut.dll` is missing, copy it from:
@@ -61,7 +62,7 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
    C:\msys64\mingw64\bin\freeglut.dll
    ```
 
-   into the same folder as `PixelShatter.exe`.
+   into the same folder as `PixelShatter.cpp or exe file`.
 
 #### Option B — Visual Studio + vcpkg
 
