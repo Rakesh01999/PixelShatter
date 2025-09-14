@@ -117,7 +117,7 @@ cd vcpkg
 If you want a one-liner to compile & run (Linux):
 
 ```bash
-g++ -std=c++17 -O2 Breakoutv0.cpp -o PixelShatter -lGL -lGLU -lglut && ./PixelShatter
+g++ -std=c++17 -O2 PixelShatter.cpp -o PixelShatter -lGL -lGLU -lglut && ./PixelShatter
 ```
 
 ---
