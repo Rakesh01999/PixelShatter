@@ -171,10 +171,30 @@ void drawGameOver() {
 
 void drawCredits() {
     drawBackground();
-    glColor3f(0.8f,0.9f,1.0f); drawText(-0.15f, 0.5f, "DEVELOPED BY", GLUT_BITMAP_TIMES_ROMAN_24);
-    drawText(-0.1f, 0.3f, "Rakesh Biswas    :200112"); drawText(-0.1f, 0.2f, "Nafis Ahamed    :200129");
+
+    // ---- "DEVELOPED BY" (centered) ----
+    const char* t1 = "DEVELOPED BY";
+    int w1 = 0; for(const char* c = t1; *c; c++) w1 += glutBitmapWidth(GLUT_BITMAP_TIMES_ROMAN_24, *c);
+    float x1 = -((float)w1 / WIDTH);
+    glColor3f(0.8f,0.9f,1.0f);
+    drawText(x1, 0.5f, t1, GLUT_BITMAP_TIMES_ROMAN_24);
+
+    // ---- "Rakesh Biswas :200112" (centered) ----
+    const char* t2 = "Rakesh Biswas    :200112";
+    int w2 = 0; for(const char* c = t2; *c; c++) w2 += glutBitmapWidth(GLUT_BITMAP_HELVETICA_18, *c);
+    float x2 = -((float)w2 / WIDTH);
+    drawText(x2, 0.3f, t2, GLUT_BITMAP_HELVETICA_18);
+
+    // ---- "Nafis Ahamed :200129" (centered) ----
+    const char* t3 = "Nafis Ahamed    :200129";
+    int w3 = 0; for(const char* c = t3; *c; c++) w3 += glutBitmapWidth(GLUT_BITMAP_HELVETICA_18, *c);
+    float x3 = -((float)w3 / WIDTH);
+    drawText(x3, 0.2f, t3, GLUT_BITMAP_HELVETICA_18);
+
+    // ---- Back Button ----
     drawButton(0, -0.4f, 0.4f, 0.12f, "BACK: Press B");
 }
+
 
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
