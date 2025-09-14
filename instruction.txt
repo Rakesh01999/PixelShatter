@@ -249,3 +249,135 @@ Use `Run Task` → `run PixelShatter`.
 
 ---
 
+
+
+
+
+---
+
+# 🎮 How to Build & Run PixelShatter on Windows
+
+---
+
+## 🔹 1. Prerequisites
+
+* A **C++17 compiler** (either **MSYS2/MinGW** or **Visual Studio**).
+* **FreeGLUT** (needed for OpenGL/GLUT functions).
+* A text editor or IDE (VS Code, Visual Studio, CLion, etc.).
+
+---
+
+## 🔹 2. Option A — MSYS2 + MinGW (recommended)
+
+This is the easiest way to get GNU tools + freeglut on Windows.
+
+1. **Install MSYS2**
+
+   * Download from: [https://www.msys2.org](https://www.msys2.org)
+   * Install it and open the **MSYS2 MinGW 64-bit** shell.
+
+2. **Update & install required packages**
+   In the MSYS2 MinGW 64-bit terminal:
+
+   ```bash
+   pacman -Syu
+   # Close terminal, reopen MSYS2 MinGW 64-bit, then run:
+   pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-freeglut
+   ```
+
+3. **Navigate to your project folder**
+   Example:
+
+   ```bash
+   cd /c/Users/YourName/Desktop/PixelShatter
+   ```
+
+4. **Compile the game**
+
+   ```bash
+   g++ -std=c++17 Breakoutv0.cpp -o PixelShatter.exe -lfreeglut -lopengl32 -lglu32 -lgdi32 -lwinmm
+   ```
+
+5. **Run the game**
+
+   ```bash
+   ./PixelShatter.exe
+   ```
+
+⚠️ If it complains about missing `freeglut.dll`, copy it from:
+
+```
+C:\msys64\mingw64\bin\freeglut.dll
+```
+
+into the same folder as your `PixelShatter.exe`.
+
+---
+
+## 🔹 3. Option B — Visual Studio (MSVC + vcpkg)
+
+If you prefer Visual Studio:
+
+1. **Install Visual Studio** with **Desktop Development with C++** workload.
+2. **Install vcpkg** (dependency manager from Microsoft):
+
+   ```powershell
+   git clone https://github.com/microsoft/vcpkg.git
+   cd vcpkg
+   .\bootstrap-vcpkg.bat
+   .\vcpkg.exe install freeglut:x64-windows
+   .\vcpkg.exe integrate install
+   ```
+3. **Open Visual Studio**, create a new **Console C++ Project**, and add `Breakoutv0.cpp`.
+4. **Enable C++17** in Project Settings → C/C++ → Language → C++ Language Standard.
+5. **Link libraries**
+   In Project Properties → Linker → Input → Additional Dependencies, add:
+
+   ```
+   opengl32.lib
+   glu32.lib
+   freeglut.lib
+   ```
+6. Build and run inside Visual Studio.
+
+---
+
+## 🔹 4. Controls & Gameplay
+
+### Main Menu
+
+* `N` = New Game
+* `C` = Credits
+* `Q` = Quit
+
+### Game Over Screen
+
+* `R` = Restart
+* `M` = Back to Menu
+
+### Credits Screen
+
+* `B` = Back to Menu
+
+### In-Game
+
+* Mouse movement = Move paddle
+* `Space` = Launch ball
+* Left mouse click = Launch ball
+* Right mouse click = Color customization menu
+* `P` = Pause / Resume
+* `Esc` = Return to main menu
+
+---
+
+## 🔹 5. Troubleshooting
+
+* **Error: cannot find `GL/freeglut.h`** → You didn’t install freeglut. Use `pacman -S mingw-w64-x86_64-freeglut` in MSYS2 or `vcpkg install freeglut:x64-windows` in VS.
+* **Missing DLLs when running** → Copy `freeglut.dll` from `C:\msys64\mingw64\bin` to your game folder.
+* **Black screen** → Ensure you’re calling `glutMainLoop()` (already in `Breakoutv0.cpp`).
+
+---
+
+✅ With this setup, you can build and run PixelShatter smoothly on **Windows 10/11**.
+
+---
