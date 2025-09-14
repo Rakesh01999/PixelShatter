@@ -7,7 +7,7 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots
 
 <img width="1366" height="683" alt="Screenshot (533)" src="https://github.com/user-attachments/assets/e0e49725-d160-4094-bfee-2d19d833be16" />
 
@@ -42,7 +42,7 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
    ```bash
    pacman -Syu
    pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-freeglut
-````
+```
 
 3. Compile:
 
