@@ -12,7 +12,8 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
 
 ## 📸 Screenshots (Optional)
 *(You can add images of the main menu, gameplay, and credits screen here)*
-![alt text](image.png)
+[alt text](image.png)
+c:\Users\Rakesh\Pictures\Screenshots\Screenshot (533).png
 ---
 
 ## 🚀 Features
