@@ -5,7 +5,7 @@
 
 # 1) Prerequisites (applies to all platforms)
 
-* You need the `Breakoutv0.cpp` file in a folder (call it `PixelShatter`).
+* You need the `PixelShatter.cpp` file in a folder (call it `PixelShatter`).
 * The project uses FreeGLUT (or system GLUT) + OpenGL. Install the development headers/libs for GLUT/freeglut.
 * A C++ compiler (g++/clang on macOS & Linux, mingw or Visual Studio on Windows).
 * Optional: an editor/IDE (VS Code, Visual Studio, CLion, etc.).
@@ -22,11 +22,11 @@ sudo apt update
 sudo apt install build-essential freeglut3-dev libglu1-mesa-dev mesa-common-dev
 ```
 
-3. Put `Breakoutv0.cpp` in a folder and `cd` to it.
+3. Put `PixelShatter.cpp` in a folder and `cd` to it.
 4. Compile (recommended flags):
 
 ```bash
-g++ -std=c++17 -O2 -Wall Breakoutv0.cpp -o PixelShatter -lGL -lGLU -lglut -lm
+g++ -std=c++17 -O2 -Wall PixelShatter.cpp -o PixelShatter -lGL -lGLU -lglut -lm
 ```
 
 (If you prefer debug symbols: replace `-O2` with `-g`.)
@@ -45,7 +45,7 @@ Two common routes:
 **A. Using system GLUT frameworks (simple but may be deprecated on some macOS versions):**
 
 ```bash
-clang++ -std=c++17 Breakoutv0.cpp -o PixelShatter -framework OpenGL -framework GLUT
+clang++ -std=c++17 PixelShatter.cpp -o PixelShatter -framework OpenGL -framework GLUT
 ./PixelShatter
 ```
 
@@ -60,7 +60,7 @@ brew install freeglut
 2. Compile (adjust include/lib paths if brew installed elsewhere):
 
 ```bash
-g++ -std=c++17 Breakoutv0.cpp -o PixelShatter -I/usr/local/include -L/usr/local/lib -lglut -lGLU -lGL
+g++ -std=c++17 PixelShatter.cpp -o PixelShatter -I/usr/local/include -L/usr/local/lib -lglut -lGLU -lGL
 ./PixelShatter
 ```
 
@@ -84,7 +84,7 @@ pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-freeglut
 4. Compile:
 
 ```bash
-g++ -std=c++17 Breakoutv0.cpp -o PixelShatter.exe -lfreeglut -lopengl32 -lglu32 -lgdi32 -lwinmm
+g++ -std=c++17 PixelShatter.cpp -o PixelShatter.exe -lfreeglut -lopengl32 -lglu32 -lgdi32 -lwinmm
 ```
 
 5. Run:
@@ -108,7 +108,7 @@ cd vcpkg
 .\vcpkg.exe integrate install
 ```
 
-* Create a new Visual C++ project, add `Breakoutv0.cpp`, set C++17, and Visual Studio will pick up freeglut via vcpkg. Link `opengl32.lib` and `glu32.lib` if needed.
+* Create a new Visual C++ project, add `PixelShatter.cpp`, set C++17, and Visual Studio will pick up freeglut via vcpkg. Link `opengl32.lib` and `glu32.lib` if needed.
 
 ---
 
@@ -124,7 +124,7 @@ g++ -std=c++17 -O2 PixelShatter.cpp -o PixelShatter -lGL -lGLU -lglut && ./Pixel
 
 # 6) Gameplay / Controls (what each key & mouse does)
 
-This matches the code in `Breakoutv0.cpp`:
+This matches the code in `PixelShatter.cpp`:
 
 **Main Menu**
 
@@ -186,7 +186,7 @@ This matches the code in `Breakoutv0.cpp`:
 
 # 10) Optional: minimal CMakeLists.txt
 
-Drop this file next to `Breakoutv0.cpp` (may require adjusting the `find` depending on platform):
+Drop this file next to `PixelShatter.cpp` (may require adjusting the `find` depending on platform):
 
 ```cmake
 cmake_minimum_required(VERSION 3.10)
@@ -198,7 +198,7 @@ find_path(FREEGLUT_INCLUDE_DIR GL/freeglut.h)
 find_library(FREEGLUT_LIBRARY NAMES freeglut glut)
 
 include_directories(${FREEGLUT_INCLUDE_DIR})
-add_executable(PixelShatter Breakoutv0.cpp)
+add_executable(PixelShatter PixelShatter.cpp)
 target_link_libraries(PixelShatter ${FREEGLUT_LIBRARY} ${OPENGL_LIBRARIES})
 ```
 
@@ -232,7 +232,7 @@ Create `.vscode/tasks.json`:
     {
       "label": "build PixelShatter",
       "type": "shell",
-      "command": "g++ -std=c++17 Breakoutv0.cpp -o PixelShatter -lGL -lGLU -lglut -lm",
+      "command": "g++ -std=c++17 PixelShatter.cpp -o PixelShatter -lGL -lGLU -lglut -lm",
       "group": { "kind": "build", "isDefault": true }
     },
     {
@@ -328,7 +328,7 @@ If you prefer Visual Studio:
    .\vcpkg.exe install freeglut:x64-windows
    .\vcpkg.exe integrate install
    ```
-3. **Open Visual Studio**, create a new **Console C++ Project**, and add `Breakoutv0.cpp`.
+3. **Open Visual Studio**, create a new **Console C++ Project**, and add `PixelShatter.cpp`.
 4. **Enable C++17** in Project Settings → C/C++ → Language → C++ Language Standard.
 5. **Link libraries**
    In Project Properties → Linker → Input → Additional Dependencies, add:
@@ -374,7 +374,7 @@ If you prefer Visual Studio:
 
 * **Error: cannot find `GL/freeglut.h`** → You didn’t install freeglut. Use `pacman -S mingw-w64-x86_64-freeglut` in MSYS2 or `vcpkg install freeglut:x64-windows` in VS.
 * **Missing DLLs when running** → Copy `freeglut.dll` from `C:\msys64\mingw64\bin` to your game folder.
-* **Black screen** → Ensure you’re calling `glutMainLoop()` (already in `Breakoutv0.cpp`).
+* **Black screen** → Ensure you’re calling `glutMainLoop()` (already in `PixelShatter.cpp`).
 
 ---
 
