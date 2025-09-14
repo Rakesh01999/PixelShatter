@@ -12,7 +12,7 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
 
 ## 📸 Screenshots (Optional)
 *(You can add images of the main menu, gameplay, and credits screen here)*
-
+![alt text](image.png)
 ---
 
 ## 🚀 Features
@@ -122,7 +122,6 @@ g++ -std=c++17 Breakoutv0.cpp -o PixelShatter -I/usr/local/include -L/usr/local/
 ### Main Menu
 
 * `N` → New Game
-* `C` → Credits
 * `Q` → Quit
 
 ### Game Over Screen
@@ -130,7 +129,7 @@ g++ -std=c++17 Breakoutv0.cpp -o PixelShatter -I/usr/local/include -L/usr/local/
 * `R` → Restart
 * `M` → Return to Menu
 
-### Credits Screen
+### Info/Credits Screen
 
 * `B` → Back to Menu
 
