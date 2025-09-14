@@ -295,7 +295,7 @@ This is the easiest way to get GNU tools + freeglut on Windows.
 4. **Compile the game**
 
    ```bash
-   g++ -std=c++17 Breakoutv0.cpp -o PixelShatter.exe -lfreeglut -lopengl32 -lglu32 -lgdi32 -lwinmm
+   g++ -o PixelShatter PixelShatter.cpp -lfreeglut -lopengl32 -lglu32
    ```
 
 5. **Run the game**
