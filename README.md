@@ -47,6 +47,7 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
 3. Compile:
 
    ```bash
+   
    g++ -o PixelShatter PixelShatter.cpp -lfreeglut -lopengl32 -lglu32
 
    ```
