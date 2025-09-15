@@ -42,9 +42,8 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
    ```bash
    pacman -Syu
    pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-freeglut
-```
-
    ```
+
 3. Compile:
 
    ```bash
