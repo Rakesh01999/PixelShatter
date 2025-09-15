@@ -44,10 +44,11 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
    pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-freeglut
 ```
 
+   ```
 3. Compile:
 
+   ```bash
    g++ -o PixelShatter PixelShatter.cpp -lfreeglut -lopengl32 -lglu32
-
    ```
 4. Run:
 
