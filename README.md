@@ -76,7 +76,7 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
    .\vcpkg.exe install freeglut:x64-windows
    .\vcpkg.exe integrate install
    ```
-3. Create a new **Console App** project, add `Breakoutv0.cpp`.
+3. Create a new **Console App** project, add `PixelShatter.cpp`.
 4. Enable **C++17** and link:
 
    ```
@@ -93,7 +93,7 @@ Includes smooth animations, keyboard shortcuts, and color customization menus.
 ```bash
 sudo apt update
 sudo apt install build-essential freeglut3-dev libglu1-mesa-dev mesa-common-dev
-g++ -std=c++17 Breakoutv0.cpp -o PixelShatter -lGL -lGLU -lglut -lm
+g++ -std=c++17 PixelShatter.cpp -o PixelShatter -lGL -lGLU -lglut -lm
 ./PixelShatter
 ```
 
@@ -104,7 +104,7 @@ g++ -std=c++17 Breakoutv0.cpp -o PixelShatter -lGL -lGLU -lglut -lm
 **Option A — Using Apple’s GLUT framework:**
 
 ```bash
-clang++ -std=c++17 Breakoutv0.cpp -o PixelShatter -framework OpenGL -framework GLUT
+clang++ -std=c++17 PixelShatter.cpp -o PixelShatter -framework OpenGL -framework GLUT
 ./PixelShatter
 ```
 
@@ -112,7 +112,7 @@ clang++ -std=c++17 Breakoutv0.cpp -o PixelShatter -framework OpenGL -framework G
 
 ```bash
 brew install freeglut
-g++ -std=c++17 Breakoutv0.cpp -o PixelShatter -I/usr/local/include -L/usr/local/lib -lglut -lGLU -lGL
+g++ -std=c++17 PixelShatter.cpp -o PixelShatter -I/usr/local/include -L/usr/local/lib -lglut -lGLU -lGL
 ./PixelShatter
 ```
 
