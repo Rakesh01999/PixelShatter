@@ -175,7 +175,5 @@ This project is open-source. You may modify and distribute it with attribution.
 
 ---
 
-```
-
 ---
 
